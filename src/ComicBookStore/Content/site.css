@@ -1,6 +1,10 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url(../Images/marvel.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -17,28 +21,55 @@ textarea {
 }
 
 /* Backbar Styles */
-.backbar{
-  width: 100%;
-  background-color: #555;
-  margin-top: -10px;
-  height: 45px;
+.backbar {
+    width: 100%;
+    background-color: #555;
+    margin-top: -10px;
+    height: 45px;
 }
-  .backbar .btn{
-    margin-top: 4px;
-  }
+
+    .backbar .btn {
+        margin-top: 4px;
+    }
 
 /* Series List Styles */
-.series-list{
-  padding: 0;
+.series-list {
+    padding: 0;
 }
 
-.series-list li{
-  list-style: none;
-  border-bottom: 1px #ddd solid;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  }
+.series-list li {
+    list-style: none;
+    border-bottom: 1px #ddd solid;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
 
-.series-list li:last-child{
-  border: none;
+.series-list li:last-child {
+    border: none;
+}
+
+.btn {
+    margin-right: 30px;
+}
+
+.desc-btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.searchbox {
+    display: block;
+    padding-top: 30px;
+}
+
+.items {
+    padding-top: 30px;
+}
+
+
+.pagination {
+    width: 100%;
+    display: block;
+    margin-left: 40px;
 }

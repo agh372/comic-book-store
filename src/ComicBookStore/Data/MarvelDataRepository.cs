@@ -8,25 +8,25 @@ using System.Web.Mvc;
 using System.Collections;
 using ComicBookStore.Models;
 
-namespace ComicBookStore.Manager
+namespace ComicBookStore.Data
 {
-    public class MarvelDataManager 
+    public class MarvelDataRepository 
     {
 
-        private static MarvelDataManager Instance;
+        private static MarvelDataRepository Instance;
         private readonly string publicKey = "0cbb06c616a75296d195411687f12a60";
         private readonly string privateKey = "b838642ada81d6490531d9166837d9d4f5db0d2c";
 
         //Constructor
-        private MarvelDataManager()
+        private MarvelDataRepository()
         {
         }
         //Property
-        public static MarvelDataManager GetInstance()
+        public static MarvelDataRepository GetInstance()
         {
             if (Instance == null)
             {
-                Instance = new MarvelDataManager();
+                Instance = new MarvelDataRepository();
             }
             return Instance;
 
@@ -41,7 +41,6 @@ namespace ComicBookStore.Manager
             {
                 foreach (var comic in response.Data.Results)
                 {
-                    // Do something with the character info 
                     var book = new ComicBook();
                     book.SeriesTitle = comic.Title;
                     book.Description = comic.Description;
@@ -78,7 +77,6 @@ namespace ComicBookStore.Manager
             {
                 foreach (var comic in response.Data.Results)
                 {
-                    // Do something with the character info 
                     var book = new ComicBook();
                     book.SeriesTitle = comic.Title;
                     book.Description = comic.Description;

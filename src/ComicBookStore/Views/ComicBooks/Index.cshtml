@@ -1,0 +1,71 @@
+﻿@model  List<ComicBookStore.Models.ComicBook>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Spiderman";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div class="container searchbox">
+
+        <div class="row">
+            <div class="col-md-3 col-md-offset-4">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for comics..">
+
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Go!</button>
+                    </span>
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+            </div>
+
+        </div><!-- /.row -->
+        <div class="container items">
+            <div class="row">
+                @foreach (var comic in Model)
+                {
+                    <div class="col-md-4">
+                        <div class="card" style="width: 18rem; height:30rem;">
+                            <img class="card-img-top" src=@(comic.Thumbnail.Path + "." + comic.Thumbnail.Extension) alt="Card image cap" height="286" width="286">
+                            <div class="card-body">
+                                <h5 class="card-title">@comic.SeriesTitle</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-md-offset-4">
+
+                    <div class="pagination">
+                        @if (ViewBag.Page > 0)
+                        {
+                            <a href="@Url.Action("Index", new { page = ViewBag.Page - 1 })"
+                               class="btn btn-default">
+                                &laquo; Prev
+                            </a>
+                        }
+                        @if (ViewBag.Page < ViewBag.MaxPage)
+                        {
+                            <a href="@Url.Action("Index", new { page = ViewBag.Page + 1 })"
+                               class="btn btn-default">
+                                Next &raquo;
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
