@@ -71,7 +71,7 @@ namespace ComicBookStore.Data
             var client = new MarvelRestClient(publicKey, privateKey);
             var filter = new ComicRequestFilter();
             filter.TitleStartsWith = filteredString;
-            var response = client.FindComics();
+            var response = client.FindComics(filter);
             List<ComicBook> comicList = new List<ComicBook>();
             if (response != null && response.Data != null)
             {

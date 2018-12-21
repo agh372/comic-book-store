@@ -19,19 +19,35 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Marvel Comic Book Store", "Index", "ComicBooks", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Marvel Comic Book Store", "", "", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <!-- Add menu items here -->
                 </ul>
             </div>
+
         </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 col-md-offset-4">
+            <div class="input-group">
+                @using (Html.BeginForm("FilteredCharacter", "ComicBooks", FormMethod.Get))
+                {
+                    <input type="text" name="characterName" class="form-control" placeholder="Search for comics..">
+
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">Go!</button>
+                    </span>
+                }
+                </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
     </div>
 
     <div class="container body-content">
         @RenderBody()
-        <hr/>
+        <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - Comic Book Gallery</p>
         </footer>
