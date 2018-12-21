@@ -43,7 +43,7 @@ namespace ComicBookStore.Data
                 {
                     var book = new ComicBook();
                     book.SeriesTitle = comic.Title;
-                    book.Description = comic.Description;
+                    book.Description = SetDescription(comic);
                     book.IssueNumber = comic.IssueNumber;
                     var thumbNail = new Thumbnail();
                     thumbNail.Path = comic.Thumbnail.Path;
@@ -79,7 +79,7 @@ namespace ComicBookStore.Data
                 {
                     var book = new ComicBook();
                     book.SeriesTitle = comic.Title;
-                    book.Description = comic.Description;
+                    book.Description = SetDescription(comic);//comic.Description;
                     book.IssueNumber = comic.IssueNumber;
                     var thumbNail = new Thumbnail();
                     thumbNail.Path = comic.Thumbnail.Path;
@@ -98,6 +98,14 @@ namespace ComicBookStore.Data
                 }
             }
             return comicList;
+        }
+
+        private string SetDescription(Marvel.Api.Model.DomainObjects.Comic comic)
+        {
+            if (String.IsNullOrEmpty(comic.Description)) {
+                return "No Description Available";
+            }
+            return comic.Description;
         }
     }
 }

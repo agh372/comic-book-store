@@ -29,30 +29,35 @@
 
         </div>
     </div>
+    <div class="container">
 
-    <div class="row">
-        <div class="col-md-3 col-md-offset-4">
-            <div class="input-group">
-                @using (Html.BeginForm("FilteredCharacter", "ComicBooks", FormMethod.Get))
-                {
-                    <input type="text" name="characterName" class="form-control" placeholder="Search for comics..">
+        <div class="row">
 
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="submit">Go!</button>
-                    </span>
-                }
-                </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
-    </div>
+            <div class="content">
+                <div class="col-md-3 col-md-offset-4">
+                    <div class="input-group">
+                        @using (Html.BeginForm("FilteredCharacter", "ComicBooks", FormMethod.Get))
+                        {
+                            <input type="text" name="characterName" class="form-control" placeholder="Search for comics..">
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Comic Book Gallery</p>
-        </footer>
-    </div>
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+                            <span class="input-group-btn">
+                                <button class="sub" type="submit">Go!</button>
+                            </span>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Comic Book Gallery</p>
+            </footer>
+        </div>
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>

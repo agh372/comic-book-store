@@ -27,7 +27,7 @@
                         <img class="card-img-top" src=@(comic.Thumbnail.Path + "." + comic.Thumbnail.Extension) alt="Card image cap" height="286" width="286">
                         <div class="card-body">
                             <h5 class="card-title">@comic.SeriesTitle</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text text-crop">@comic.Description</p>
                         </div>
                     </div>
                 </div>
@@ -37,23 +37,26 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-md-offset-4">
-
                 <div class="pagination">
                     @if (ViewBag.Page > 0)
                     {
-                        <a href="@Url.Action("FilteredCharacter", new { charactername = Request.Params["characterName"],page = ViewBag.Page - 1 })"
-                           class="btn btn-default">
-                            &laquo; Prev
-                        </a>
+                        <span class="input-group-btn">
+                            <button class="btn-pagination" type="button" 
+                                    onclick="location.href='@Url.Action("FilteredCharacter", new {  charactername = Request.Params["characterName"],
+                                                                                                     page = ViewBag.Page - 1 })'"> &laquo; Prev  </button>
+                        </span>
                     }
                     @if (ViewBag.Page < ViewBag.MaxPage)
                     {
-                        <a href="@Url.Action("FilteredCharacter", new { charactername = Request.Params["characterName"],page = ViewBag.Page + 1 })"
-                           class="btn btn-default">
-                            Next &raquo;
-                        </a>
+                        <span class="input-group-btn">
+                            <button class="btn-pagination" type="button" 
+                                    onclick="location.href='@Url.Action("FilteredCharacter", new {  charactername = Request.Params["characterName"],
+                                                                                                     page = ViewBag.Page + 1 })'"> Next &raquo; </button>
+                        </span>
+
                     }
                 </div>
+
             </div>
         </div>
     </div>
