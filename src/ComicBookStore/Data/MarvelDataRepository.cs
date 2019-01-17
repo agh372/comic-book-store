@@ -14,8 +14,8 @@ namespace ComicBookStore.Data
     {
 
         private static MarvelDataRepository Instance;
-        private readonly string publicKey = "0cbb06c616a75296d195411687f12a60";
-        private readonly string privateKey = "b838642ada81d6490531d9166837d9d4f5db0d2c";
+        private readonly string publicKey = "<PRIVATE KEY>";
+        private readonly string privateKey = "<PUBLIC KEY>";
 
         //Constructor
         private MarvelDataRepository()
