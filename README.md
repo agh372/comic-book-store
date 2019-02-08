@@ -2,6 +2,9 @@
 
 ASP.NET MVC project which uses Marvel API to display comic books
 
+## Screenshot
+
+
 ## How to run
 
 Register and get a public key and private key from [Marvel](https://developer.marvel.com/) website.
