@@ -4,6 +4,7 @@ ASP.NET MVC project which uses Marvel API to display comic books
 
 ## Screenshot
 
+![comic_1 4x](https://user-images.githubusercontent.com/37753430/52508280-a5ac7e00-2bb9-11e9-8c70-061886bc1b59.png)
 
 ## How to run
 
